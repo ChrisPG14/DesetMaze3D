@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnsjfnqo3mad7"]
+
+[ext_resource type="Script" uid="uid://omdmgpltr0tr" path="res://level/PowerUpInvincible.gd" id="1_bmvrq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_quugf"]
+height = 0.17569
+radius = 0.43
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_031p3"]
+albedo_color = Color(0.541176, 0.541176, 0.00392157, 1)
+metallic = 0.6
+
+[sub_resource type="TorusMesh" id="TorusMesh_dk5uy"]
+material = SubResource("StandardMaterial3D_031p3")
+uv2_padding = 2.4
+inner_radius = 0.159
+outer_radius = 0.43
+rings = 50
+ring_segments = 50
+
+[node name="PowerUpInvincible_tscn" type="Area3D"]
+script = ExtResource("1_bmvrq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00397934, -0.999992, 0, 0.999992, -0.00397934, 0, 0.109389, -0.0150521)
+shape = SubResource("CylinderShape3D_quugf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0234725, -0.999725, 0, 0.999725, 0.0234725, 0, 0.118562, 0)
+mesh = SubResource("TorusMesh_dk5uy")

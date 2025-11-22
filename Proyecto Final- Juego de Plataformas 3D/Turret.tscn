@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvphsegh36t4y"]
+
+[ext_resource type="Script" uid="uid://bmk1qjemihf23" path="res://turret.gd" id="1_w3f5i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
+transparency = 2
+alpha_scissor_threshold = 0.59
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.86877, 0.471411, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w3f5i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w3f5i"]
+radius = 0.506255
+
+[node name="Enemy" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50056, 0)
+collision_layer = 5
+collision_mask = 3
+script = ExtResource("1_w3f5i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0165029, 0)
+material_override = SubResource("StandardMaterial3D_7k104")
+mesh = SubResource("SphereMesh_w3f5i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0146366, 0)
+shape = SubResource("SphereShape3D_w3f5i")
+
+[node name="FireTimer" type="Timer" parent="."]

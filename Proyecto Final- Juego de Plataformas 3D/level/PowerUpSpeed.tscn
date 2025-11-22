@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck15b8qocjug6"]
+
+[ext_resource type="Script" uid="uid://bnnqtrgwtb4j2" path="res://level/PowerUpSpeed.gd" id="1_u2jft"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_64p65"]
+radius = 0.296598
+height = 1.15346
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2jft"]
+albedo_color = Color(0.168627, 0.486275, 1, 0.992157)
+metallic = 0.21
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_giyja"]
+material = SubResource("StandardMaterial3D_u2jft")
+radius = 0.3
+height = 1.15
+
+[node name="PowerUpSpeed" type="Area3D"]
+script = ExtResource("1_u2jft")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.0414397, 0.999141, 0, -0.999141, 0.0414397, 0, 0, 0, 1, 0, 0.226637, 0)
+shape = SubResource("CapsuleShape3D_64p65")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0188135, 0.999823, 0, -0.999823, -0.0188135, 0, 0, 0, 1, 0.0229079, 0.225505, 0)
+mesh = SubResource("CapsuleMesh_giyja")

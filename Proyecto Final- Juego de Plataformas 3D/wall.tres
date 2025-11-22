@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://pwfca8kefnus"]
+
+[ext_resource type="Texture2D" uid="uid://b6l0p7rwb674b" path="res://addons/Concrete044D_2K-JPG/Concrete044D_2K-JPG_Color.jpg" id="1_5h566"]
+[ext_resource type="Texture2D" uid="uid://cvfpit7v7c2oo" path="res://addons/Concrete044D_2K-JPG/Concrete044D_2K-JPG_AmbientOcclusion.jpg" id="2_xydwi"]
+[ext_resource type="Texture2D" uid="uid://8b53q5nvfdum" path="res://addons/Concrete044D_2K-JPG/Concrete044D_2K-JPG_NormalGL.jpg" id="3_fj6aq"]
+[ext_resource type="Texture2D" uid="uid://deh5hhqvh6300" path="res://addons/Concrete044D_2K-JPG/Concrete044D_2K-JPG_Roughness.jpg" id="4_5prdw"]
+
+[resource]
+albedo_texture = ExtResource("1_5h566")
+roughness_texture = ExtResource("4_5prdw")
+normal_enabled = true
+normal_texture = ExtResource("3_fj6aq")
+ao_enabled = true
+ao_texture = ExtResource("2_xydwi")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvt4747kc5u2t"]
+
+[ext_resource type="Script" uid="uid://8x7a21e0b8nn" path="res://game.gd" id="1_1il7v"]
+[ext_resource type="PackedScene" uid="uid://b1ot6gn6tms6h" path="res://lesson_reference/player_3d_template.tscn" id="1_w0p8v"]
+[ext_resource type="PackedScene" uid="uid://b2cq2n2ev4mtv" path="res://UI.tscn" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://ck15b8qocjug6" path="res://level/PowerUpSpeed.tscn" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://level/level.tscn" id="7_2frud"]
+[ext_resource type="PackedScene" uid="uid://dnsjfnqo3mad7" path="res://level/PowerUpInvincible.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://bxg6oejpaitdt" path="res://level/interactable/flag/flag_reached_screen.tscn" id="19_cpgj4"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_1il7v")
+
+[node name="Player3DTemplate" parent="." instance=ExtResource("1_w0p8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43638, 0, -7.8513)
+
+[node name="FlagReachedScreen" parent="." instance=ExtResource("19_cpgj4")]
+
+[node name="Level" parent="." instance=ExtResource("7_2frud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.4)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("5_7jktm")]
+
+[node name="PowerUpSpeed" parent="." instance=ExtResource("6_ryrav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19294, 7, 50.4502)
+
+[node name="PowerUpSpeed2" parent="." instance=ExtResource("6_ryrav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1965, 7, 87.922)
+
+[node name="PowerUpInvincible_tscn" parent="." instance=ExtResource("7_eow3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24389, 6.5, 64.9842)
